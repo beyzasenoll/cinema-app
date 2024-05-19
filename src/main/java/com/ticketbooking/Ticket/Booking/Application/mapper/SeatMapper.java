@@ -9,7 +9,7 @@ public class SeatMapper {
         return new SeatDto(
                 seat.getSeatNo(),
                 seat.getSeatType(),
-                TheatreMapper.toDto(seat.getTheatre())
+                HallMapper.toDto(seat.getHall())
         );
     }
 
@@ -18,7 +18,7 @@ public class SeatMapper {
         Seat seat = new Seat();
         seat.setSeatNo(seatDto.getSeatNo());
         seat.setSeatType(seatDto.getSeatType());
-        seat.setTheatre(TheatreMapper.toEntity(seatDto.getTheatre()));
+        seat.setHall(HallMapper.toEntity(seatDto.getTheatre()));
         return seat;
     }
 }

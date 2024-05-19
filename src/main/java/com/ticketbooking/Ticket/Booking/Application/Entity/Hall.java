@@ -11,15 +11,15 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Theatre {
+public class Hall {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long tid;
+    private Long hallId;
     private String loc;
-    private String tname;
+    private String name;
 
-    @OneToMany(mappedBy="theatre")
+    @OneToMany(mappedBy="hall")
     Set<Seat> seats ;
-    @OneToMany(mappedBy="theatre")
+    @OneToMany(mappedBy="hall")
     Set<Ticket> tickets ;
 }

@@ -15,7 +15,6 @@ public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ticketNo;
-    private int hallNo;
     private double price;
     private int seatNo;
     @ManyToOne
@@ -26,8 +25,8 @@ public class Ticket {
     @JoinColumn(name = "showDetailsId", referencedColumnName = "showDetailsId")
     private ShowDetails showDetails;
     @ManyToOne
-    @JoinColumn(name="tid", nullable=false)
-    private Theatre theatre;
+    @JoinColumn(name="hallId", nullable=false)
+    private Hall hall;
 
     @ManyToMany(mappedBy = "movieTicket")
     Set<Movie> movies;

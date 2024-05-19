@@ -10,12 +10,11 @@ public class TicketMapper {
         if (ticket == null) return null;
         return new TicketDto(
                 ticket.getTicketNo(),
-                ticket.getHallNo(),
                 ticket.getPrice(),
                 ticket.getSeatNo(),
                 CustomerMapper.toDto(ticket.getCustomer()),
                 ShowDetailsMapper.toDto(ticket.getShowDetails()),
-                TheatreMapper.toDto(ticket.getTheatre()),
+                HallMapper.toDto(ticket.getHall()),
                 ticket.getMovies().stream()
                         .map(MovieMapper::toDto)
                         .collect(Collectors.toSet())
@@ -26,12 +25,11 @@ public class TicketMapper {
         if (ticketDto == null) return null;
         Ticket ticket = new Ticket();
         ticket.setTicketNo(ticketDto.getTicketNo());
-        ticket.setHallNo(ticketDto.getHallNo());
         ticket.setPrice(ticketDto.getPrice());
         ticket.setSeatNo(ticketDto.getSeatNo());
         ticket.setCustomer(CustomerMapper.toEntity(ticketDto.getCustomer()));
         ticket.setShowDetails(ShowDetailsMapper.toEntity(ticketDto.getShowData()));
-        ticket.setTheatre(TheatreMapper.toEntity(ticketDto.getTheatre()));
+        ticket.setHall(HallMapper.toEntity(ticketDto.getTheatre()));
         ticket.setMovies(ticketDto.getMovies().stream()
                 .map(MovieMapper::toEntity)
                 .collect(Collectors.toSet()));

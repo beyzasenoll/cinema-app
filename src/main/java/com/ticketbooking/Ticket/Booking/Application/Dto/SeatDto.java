@@ -7,5 +7,5 @@ import lombok.*;
 public class SeatDto {
     private Long seatNo;
     private String seatType;
-    private TheatreDto theatre;
+    private HallDto theatre;
 }

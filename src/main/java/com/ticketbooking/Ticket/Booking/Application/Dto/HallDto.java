@@ -6,10 +6,10 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TheatreDto {
-    private Long tid;
+public class HallDto {
+    private Long hallId;
     private String loc;
-    private String tname;
+    private String name;
     private Set<SeatDto> seats;
     private Set<TicketDto> tickets;
 }

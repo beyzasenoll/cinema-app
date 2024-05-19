@@ -27,12 +27,11 @@ public class TicketService {
 
     public TicketDto update(Long id, TicketDto ticketDto) {
         Ticket ticket = ticketRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Ticket not found"));
-        ticket.setHallNo(ticketDto.getHallNo());
         ticket.setPrice(ticketDto.getPrice());
         ticket.setSeatNo(ticketDto.getSeatNo());
         ticket.setCustomer(CustomerMapper.toEntity(ticketDto.getCustomer()));
         ticket.setShowDetails(ShowDetailsMapper.toEntity(ticketDto.getShowData()));
-        ticket.setTheatre(TheatreMapper.toEntity(ticketDto.getTheatre()));
+        ticket.setHall(HallMapper.toEntity(ticketDto.getTheatre()));
         ticket = ticketRepository.save(ticket);
         return TicketMapper.toDto(ticket);
     }

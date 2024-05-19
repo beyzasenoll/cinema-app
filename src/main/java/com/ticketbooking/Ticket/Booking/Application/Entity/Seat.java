@@ -6,8 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 
 @Entity
 @Data
@@ -20,7 +18,7 @@ public class Seat {
     private String seatType;
 
     @ManyToOne
-    @JoinColumn(name="tid", nullable=false)
-    private Theatre theatre;
+    @JoinColumn(name="hallId", nullable=false)
+    private Hall hall;
 
 }

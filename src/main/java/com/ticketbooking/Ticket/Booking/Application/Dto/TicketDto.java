@@ -8,11 +8,10 @@ import java.util.Set;
 @NoArgsConstructor
 public class TicketDto {
     private Long ticketNo;
-    private int hallNo;
     private double price;
     private int seatNo;
     private CustomerDto customer;
     private ShowDetailsDto showData;
-    private TheatreDto theatre;
+    private HallDto theatre;
     private Set<MovieDto> movies;
 }
