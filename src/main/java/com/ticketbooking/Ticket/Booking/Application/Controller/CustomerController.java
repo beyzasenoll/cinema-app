@@ -1,6 +1,8 @@
 package com.ticketbooking.Ticket.Booking.Application.Controller;
 
 import com.ticketbooking.Ticket.Booking.Application.Dto.CustomerDto;
+import com.ticketbooking.Ticket.Booking.Application.Dto.CustomerTicketRequestDto;
+import com.ticketbooking.Ticket.Booking.Application.Dto.TicketDto;
 import com.ticketbooking.Ticket.Booking.Application.Service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +15,15 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
+    @PostMapping("/select")
+    public ResponseEntity<TicketDto> selectTicket(@RequestBody CustomerTicketRequestDto customerTicketRequestDto) {
+        TicketDto ticketDto = customerService.selectTicket(customerTicketRequestDto.getCustomerId(), customerTicketRequestDto.getTicketId());
+        if (ticketDto != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(ticketDto);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
 
     @PostMapping
     public ResponseEntity<CustomerDto> create(@RequestBody CustomerDto customerDto) {

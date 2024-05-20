@@ -2,13 +2,16 @@ package com.ticketbooking.Ticket.Booking.Application.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString(exclude = "ticket")
+@EqualsAndHashCode(exclude = "ticket")
 @Table(name = "showDetails")
 public class ShowDetails {
     @Id

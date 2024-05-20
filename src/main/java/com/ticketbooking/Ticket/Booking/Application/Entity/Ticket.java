@@ -2,15 +2,18 @@ package com.ticketbooking.Ticket.Booking.Application.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
 @Entity
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString(exclude = {"customer", "showDetails", "hall", "movies"})
+@EqualsAndHashCode(exclude = {"customer", "showDetails", "hall", "movies"})
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
