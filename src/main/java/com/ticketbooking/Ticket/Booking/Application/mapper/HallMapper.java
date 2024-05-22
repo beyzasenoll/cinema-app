@@ -12,9 +12,7 @@ public class HallMapper {
         return new HallDto(
                 hall.getHallId(),
                 hall.getLoc(),
-                hall.getName(),
-                hall.getSeats().stream().map(SeatMapper::toDto).collect(Collectors.toSet()),
-                hall.getTickets().stream().map(TicketMapper::toDto).collect(Collectors.toSet())
+                hall.getName()
         );
     }
 
@@ -24,8 +22,6 @@ public class HallMapper {
         hall.setHallId(hallDto.getHallId());
         hall.setLoc(hallDto.getLoc());
         hall.setName(hallDto.getName());
-        hall.setSeats(hallDto.getSeats().stream().map(SeatMapper::toEntity).collect(Collectors.toSet()));
-        hall.setTickets(hallDto.getTickets().stream().map(TicketMapper::toEntity).collect(Collectors.toSet()));
         return hall;
     }
 }

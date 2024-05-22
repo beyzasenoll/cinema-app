@@ -19,5 +19,4 @@ public class MovieDto {
     private double budget;
     private int duration;
     private double rating;
-    private Set<Ticket> tickets;
 }

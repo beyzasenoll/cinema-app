@@ -12,8 +12,7 @@ public class CustomerMapper {
                 customer.getCid(),
                 customer.getCName(),
                 customer.getEmail(),
-                customer.getPhoneNo(),
-                customer.getTickets().stream().map(TicketMapper::toDto).collect(Collectors.toSet())
+                customer.getPhoneNo()
         );
     }
 
@@ -24,7 +23,6 @@ public class CustomerMapper {
         customer.setCName(customerDto.getCName());
         customer.setEmail(customerDto.getEmail());
         customer.setPhoneNo(customerDto.getPhoneNo());
-        customer.setTickets(customerDto.getTickets().stream().map(TicketMapper::toEntity).collect(Collectors.toSet()));
         return customer;
     }
 }

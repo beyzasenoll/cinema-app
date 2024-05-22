@@ -12,5 +12,4 @@ public class CustomerDto {
     private String cName;
     private String email;
     private String phoneNo;
-    private Set<TicketDto> tickets;
 }

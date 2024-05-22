@@ -11,13 +11,7 @@ public class TicketMapper {
         return new TicketDto(
                 ticket.getTicketNo(),
                 ticket.getPrice(),
-                ticket.getSeatNo(),
-                CustomerMapper.toDto(ticket.getCustomer()),
-                ShowDetailsMapper.toDto(ticket.getShowDetails()),
-                HallMapper.toDto(ticket.getHall()),
-                ticket.getMovies().stream()
-                        .map(MovieMapper::toDto)
-                        .collect(Collectors.toSet())
+                ticket.getSeatNo()
         );
     }
 
@@ -27,12 +21,6 @@ public class TicketMapper {
         ticket.setTicketNo(ticketDto.getTicketNo());
         ticket.setPrice(ticketDto.getPrice());
         ticket.setSeatNo(ticketDto.getSeatNo());
-        ticket.setCustomer(CustomerMapper.toEntity(ticketDto.getCustomer()));
-        ticket.setShowDetails(ShowDetailsMapper.toEntity(ticketDto.getShowData()));
-        ticket.setHall(HallMapper.toEntity(ticketDto.getTheatre()));
-        ticket.setMovies(ticketDto.getMovies().stream()
-                .map(MovieMapper::toEntity)
-                .collect(Collectors.toSet()));
         return ticket;
     }
 }

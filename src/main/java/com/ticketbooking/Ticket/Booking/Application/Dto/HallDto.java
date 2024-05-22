@@ -10,6 +10,4 @@ public class HallDto {
     private Long hallId;
     private String loc;
     private String name;
-    private Set<SeatDto> seats;
-    private Set<TicketDto> tickets;
 }

@@ -11,8 +11,7 @@ public class ShowDetailsMapper {
                 show.getDate(),
                 show.getStTime(),
                 show.getEndTime(),
-                show.getLang(),
-                TicketMapper.toDto(show.getTicket())
+                show.getLang()
         );
     }
 
@@ -24,7 +23,6 @@ public class ShowDetailsMapper {
         show.setStTime(showDetailsDto.getStTime());
         show.setEndTime(showDetailsDto.getEndTime());
         show.setLang(showDetailsDto.getLang());
-        show.setTicket(TicketMapper.toEntity(showDetailsDto.getTicket()));
         return show;
     }
 }

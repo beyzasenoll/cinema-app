@@ -19,8 +19,7 @@ public class MovieMapper {
                 movieData.getActors(),
                 movieData.getBudget(),
                 movieData.getDuration(),
-                movieData.getRating(),
-                movieData.getMovieTicket()
+                movieData.getRating()
         );
     }
 
@@ -38,7 +37,6 @@ public class MovieMapper {
         movieData.setBudget(movieDto.getBudget());
         movieData.setDuration(movieDto.getDuration());
         movieData.setRating(movieDto.getRating());
-        movieData.setMovieTicket(movieDto.getTickets());
         return movieData;
     }
 }

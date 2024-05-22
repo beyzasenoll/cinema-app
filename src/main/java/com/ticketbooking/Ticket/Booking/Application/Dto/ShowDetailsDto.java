@@ -10,5 +10,4 @@ public class ShowDetailsDto {
     private String stTime;
     private String endTime;
     private String lang;
-    private TicketDto ticket;
 }

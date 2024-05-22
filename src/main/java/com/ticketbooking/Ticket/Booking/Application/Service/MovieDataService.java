@@ -35,7 +35,6 @@ public class MovieDataService {
         movieData.setBudget(movieDto.getBudget());
         movieData.setDuration(movieDto.getDuration());
         movieData.setRating(movieDto.getRating());
-        movieData.setMovieTicket(movieDto.getTickets());
         movieData = movieRepository.save(movieData);
         return MovieMapper.toDto(movieData);
     }
